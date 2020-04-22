@@ -11,6 +11,7 @@ public class Gantt extends PApplet
 	ArrayList<Task> tasks = new ArrayList<Task>();
 	
 	float border;
+	float left;
 
 	float w;
 	float h; 
@@ -18,6 +19,12 @@ public class Gantt extends PApplet
 	public void settings()
 	{
 		size(800, 600);
+
+		border = width * 0.1f;
+		left = width * 0.03f;
+
+		w = width * 0.3f;
+		h = height * 0.1f;
 	}
 
 	public void loadTasks()
@@ -36,6 +43,22 @@ public class Gantt extends PApplet
 		for(Task t:tasks)
 		{
 			System.out.println(t);
+		}
+	}
+
+	public void displayTasks()
+	{
+		for(int i = 0 ; i < tasks.size() ; i++)
+		{
+			Task t = tasks.get(i);
+
+			float y = map(i, 0, tasks.size(), border, height - border);
+
+			fill(0);
+			rect(left, y, w, h);
+			fill(255);
+			textAlign(LEFT, CENTER);
+			text(t.getTaskname(), left + 10, y + (h/2));
 		}
 	}
 	
@@ -60,5 +83,7 @@ public class Gantt extends PApplet
 	public void draw()
 	{			
 		background(0);
+
+		displayTasks();
 	}
 }
