@@ -91,6 +91,19 @@ public class Gantt extends PApplet
 		}
 		*/
 
+		for(int j = 1 ; j <= taskNum.length; j ++)
+		{
+
+			float y = map(j, 0, taskNum.length, border, width - border);
+			//float x =  border + y - (h/10);
+			
+			
+			textAlign(RIGHT, TOP);
+			textLeading(10);
+			text(j, border + y  , w - (h*10/3) );
+			
+		}
+
 	}
 		
 	
