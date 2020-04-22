@@ -2,6 +2,7 @@ package ie.tudublin;
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import processing.core.PApplet;
 import processing.data.Table;
@@ -128,14 +129,23 @@ public class Gantt extends PApplet
 
 	public void drawTab()
 	{
+		noStroke();
+		colorMode(HSB);
 		for(int i = 0 ; i < tasks.size() ; i ++)
 		{
+			Task t = tasks.get(i);
+
 			float y = map(i, 0, tasks.size(), border, height - border);
-			float x = map(i, 0, taskNum.length, border, width - border);
+			float x = map(i, 0, tasks.size(), border, width - border);
+			
 			tasks.get(i).render(width / 2, y);
 
+			fill(map(i, 0, taskNum.length, 0, 255), 255, 255);
 			rect(y+20, y, 50, 20, 5);
+			
 		}
+		
+		
 	}
 		
 	
@@ -147,6 +157,7 @@ public class Gantt extends PApplet
 	public void mouseDragged()
 	{
 		//println("Mouse dragged");
+
 	}
 
 	

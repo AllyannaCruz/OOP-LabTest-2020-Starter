@@ -11,7 +11,8 @@ public class Task
     private float endtime;
 
     
-    public Task(String taskname, float starttime, float endtime) {
+    public Task(String taskname, float starttime, float endtime) 
+    {
         this.taskname = taskname;
         this.starttime = starttime;
         this.endtime = endtime;
@@ -24,37 +25,44 @@ public class Task
 
     
 
-    public String getTaskname() {
+    public String getTaskname() 
+    {
         return taskname;
     }
 
-    public void setTaskname(String taskname) {
+    public void setTaskname(String taskname) 
+    {
         this.taskname = taskname;
     }
 
-    public float getStarttime() {
+    public float getStarttime() 
+    {
         return starttime;
     }
 
-    public void setStarttime(float starttime) {
+    public void setStarttime(float starttime) 
+    {
         this.starttime = starttime;
     }
 
-    public float getEndtime() {
+    public float getEndtime() 
+    {
         return endtime;
     }
 
-    public void setEndtime(float endtime) {
+    public void setEndtime(float endtime) 
+    {
         this.endtime = endtime;
     }
     
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Task [taskname =" + taskname +", starttime=" + starttime +", endtime=" + endtime +" ]";
     }
 
     public void render(float x, float y)
     {
-
+        
     }
 } //end class
