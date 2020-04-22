@@ -9,6 +9,7 @@ import processing.data.TableRow;
 
 public class Gantt extends PApplet
 {	
+	public ArrayList<ColorTab> colors = new ArrayList<ColorTab>();
 	ArrayList<Task> tasks = new ArrayList<Task>();
 	
 	float border;
@@ -96,7 +97,7 @@ public class Gantt extends PApplet
 
 			float x = map(j, 0, taskNum.length, border, width - border);
 			float y = map(j, 0, taskNum.length, border, height - border );
-			
+			float z = 30;
 			
 			textAlign(RIGHT, TOP);
 			textLeading(10);
@@ -104,11 +105,35 @@ public class Gantt extends PApplet
 
 			//vertical lines
 			stroke(255);
-			line(y,border,y ,width-border);
-			println(y);
+			line(y+90,border,y+90 ,width-border);
+			y = y + 10;
+			
+			/*
+			while(z <= w)
+			{
+				line(y+100,border,y+100 ,width-border);
+				y = y + 20;
+				//line(z, 0, z, height);
+				//z = z+ 20;
+			}
+			*/
 			
 		}
 
+
+
+	}
+
+	public ColorTab findColor(int num)
+	{
+		for(ColorTab c:colors)
+		{
+			if(c.num == num)
+			{
+				return c;
+			}
+		}
+		return null;
 	}
 		
 	
@@ -119,7 +144,7 @@ public class Gantt extends PApplet
 
 	public void mouseDragged()
 	{
-		println("Mouse dragged");
+		//println("Mouse dragged");
 	}
 
 	
@@ -135,5 +160,6 @@ public class Gantt extends PApplet
 		background(0);
 
 		displayTasks();
+		
 	}
 } //end class
