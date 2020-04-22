@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.data.TableRow;
+import processing.data.Table;
 
 public class Task {
 
