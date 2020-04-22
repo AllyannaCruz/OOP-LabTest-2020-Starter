@@ -21,7 +21,7 @@ public class Gantt extends PApplet
 		size(800, 600);
 
 		border = width * 0.1f;
-		left = width * 0.03f;
+		left = width * 0.05f;
 
 		w = width * 0.3f;
 		h = height * 0.1f;
@@ -59,6 +59,8 @@ public class Gantt extends PApplet
 			fill(255);
 			textAlign(LEFT, CENTER);
 			text(t.getTaskname(), left + 10, y + (h/2));
+			textAlign(TOP, CENTER);
+			text(nf(t.getStarttime(), 0, 2), left + y - 10, w + (h/3) );
 		}
 	}
 	
@@ -86,4 +88,4 @@ public class Gantt extends PApplet
 
 		displayTasks();
 	}
-}
+} //end class

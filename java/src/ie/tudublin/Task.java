@@ -3,7 +3,8 @@ package ie.tudublin;
 import processing.data.TableRow;
 import processing.data.Table;
 
-public class Task {
+public class Task 
+{
 
     private String taskname;
     private float starttime;
