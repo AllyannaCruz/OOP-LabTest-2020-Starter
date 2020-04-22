@@ -12,9 +12,15 @@ public class Gantt extends PApplet
 	
 	float border;
 	float left;
+	
 
 	float w;
 	float h; 
+
+	//float[] tasknum = new float [30];
+	//int [] tasknum = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30};
+
+	
 
 	public void settings()
 	{
@@ -25,6 +31,9 @@ public class Gantt extends PApplet
 
 		w = width * 0.3f;
 		h = height * 0.1f;
+
+		
+		
 	}
 
 	public void loadTasks()
@@ -60,13 +69,27 @@ public class Gantt extends PApplet
 			fill(255);
 			textAlign(LEFT, CENTER);
 			text(t.getTaskname(), left + 10, y + (h/2));
+			/*
 			textAlign(TOP, CENTER);
-			text(nf(t.getStarttime(), 0, 2), border + y - h/10, w - (h*10/3) );
+			text(nf(t.getStarttime(), 0, 0), border + y - h/10, w - (h*10/3) );
+			textAlign(TOP, CENTER);
+			text(nf(t.getEndtime(), 0, 0), border + y - (h/10) + 20 , w - (h*10/3) );
+			*/
+			
 			
 		}
 
-	
+		for(int j = 0 ; j <= 30; j ++)
+		{
+			float y = map(j, 0, tasks.size(), border, height - border);
+
+			textAlign(TOP, LEFT);
+			text(j, border + y - h/10, w - (h*10/3) );
+			
+		}
+
 	}
+		
 	
 	public void mousePressed()
 	{
