@@ -61,8 +61,8 @@ public class Gantt extends PApplet
 
 			float y = map(i, 0, tasks.size(), border, height - border);
 
-			fill(0);
-			rect(left, y, w, h);
+			//fill(0);
+			//rect(left, y, w, h);
 			fill(255);
 			textAlign(LEFT, CENTER);
 			textLeading(10);
@@ -94,13 +94,18 @@ public class Gantt extends PApplet
 		for(int j = 1 ; j <= taskNum.length; j ++)
 		{
 
-			float y = map(j, 0, taskNum.length, border, width - border);
-			//float x =  border + y - (h/10);
+			float x = map(j, 0, taskNum.length, border, width - border);
+			float y = map(j, 0, taskNum.length, border, height - border );
 			
 			
 			textAlign(RIGHT, TOP);
 			textLeading(10);
-			text(j, border + y  , w - (h*10/3) );
+			text(j, border + x  , w - (h*10/3) );
+
+			//vertical lines
+			stroke(255);
+			line(y,border,y ,width-border);
+			println(y);
 			
 		}
 
