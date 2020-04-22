@@ -31,8 +31,6 @@ public class Gantt extends PApplet
 		w = width * 0.3f;
 		h = height * 0.1f;
 
-		
-		
 	}
 
 	public void loadTasks()
@@ -68,14 +66,6 @@ public class Gantt extends PApplet
 			textAlign(LEFT, CENTER);
 			textLeading(10);
 			text(t.getTaskname(), left + 10, y + (h/2));
-			/*
-			textAlign(TOP, CENTER);
-			text(nf(t.getStarttime(), 0, 0), border + y - h/10, w - (h*10/3) );
-			textAlign(TOP, CENTER);
-			text(nf(t.getEndtime(), 0, 0), border + y - (h/10) + 20 , w - (h*10/3) );
-			*/
-			
-			
 		}
 
 		/*
@@ -135,6 +125,18 @@ public class Gantt extends PApplet
 		}
 		return null;
 	}
+
+	public void drawTab()
+	{
+		for(int i = 0 ; i < tasks.size() ; i ++)
+		{
+			float y = map(i, 0, tasks.size(), border, height - border);
+			float x = map(i, 0, taskNum.length, border, width - border);
+			tasks.get(i).render(width / 2, y);
+
+			rect(y+20, y, 50, 20, 5);
+		}
+	}
 		
 	
 	public void mousePressed()
@@ -160,6 +162,7 @@ public class Gantt extends PApplet
 		background(0);
 
 		displayTasks();
+		drawTab();
 		
 	}
 } //end class

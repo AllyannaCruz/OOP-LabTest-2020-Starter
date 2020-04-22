@@ -52,4 +52,9 @@ public class Task
     public String toString() {
         return "Task [taskname =" + taskname +", starttime=" + starttime +", endtime=" + endtime +" ]";
     }
+
+    public void render(float x, float y)
+    {
+
+    }
 } //end class
