@@ -140,7 +140,7 @@ public class Gantt extends PApplet
 			
 			tasks.get(i).render(width / 2, y);
 
-			fill(map(i, 0, taskNum.length, 0, 255), 255, 255);
+			fill(map(i, 0, tasks.size(), 0, 255), 255, 255);
 			rect(y+20, y, 50, 20, 5);
 			
 		}
