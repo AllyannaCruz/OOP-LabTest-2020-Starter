@@ -63,6 +63,6 @@ public class Task
 
     public void render(float x, float y)
     {
-        
+
     }
 } //end class
