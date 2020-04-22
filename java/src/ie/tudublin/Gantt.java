@@ -53,6 +53,7 @@ public class Gantt extends PApplet
 			Task t = tasks.get(i);
 
 			float y = map(i, 0, tasks.size(), border, height - border);
+			float u = map(i, 0, tasks.size(), border, height);
 
 			fill(0);
 			rect(left, y, w, h);
@@ -60,8 +61,11 @@ public class Gantt extends PApplet
 			textAlign(LEFT, CENTER);
 			text(t.getTaskname(), left + 10, y + (h/2));
 			textAlign(TOP, CENTER);
-			text(nf(t.getStarttime(), 0, 2), left + y - 10, w + (h/3) );
+			text(nf(t.getStarttime(), 0, 2), border + y - h/10, w - (h*10/3) );
+			
 		}
+
+	
 	}
 	
 	public void mousePressed()
