@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -12,15 +13,12 @@ public class Gantt extends PApplet
 	
 	float border;
 	float left;
-	
 
 	float w;
 	float h; 
 
-	//float[] tasknum = new float [30];
-	//int [] tasknum = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30};
+	float[] taskNum = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30};
 
-	
 
 	public void settings()
 	{
@@ -62,12 +60,12 @@ public class Gantt extends PApplet
 			Task t = tasks.get(i);
 
 			float y = map(i, 0, tasks.size(), border, height - border);
-			float u = map(i, 0, tasks.size(), border, height);
 
 			fill(0);
 			rect(left, y, w, h);
 			fill(255);
 			textAlign(LEFT, CENTER);
+			textLeading(10);
 			text(t.getTaskname(), left + 10, y + (h/2));
 			/*
 			textAlign(TOP, CENTER);
@@ -79,14 +77,19 @@ public class Gantt extends PApplet
 			
 		}
 
-		for(int j = 0 ; j <= 30; j ++)
+		/*
+		for(int j = 1 ; j <= 30; j ++)
 		{
-			float y = map(j, 0, tasks.size(), border, height - border);
 
+			float y = map(j, 0, tasks.size(), border, height - border);
+			float x =  border + y - (h/10);
+			
 			textAlign(TOP, LEFT);
-			text(j, border + y - h/10, w - (h*10/3) );
+			textLeading(10);
+			text(j, border + y - (h/10), w - (h*10/3) );
 			
 		}
+		*/
 
 	}
 		
